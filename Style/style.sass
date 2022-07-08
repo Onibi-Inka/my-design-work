@@ -1,0 +1,443 @@
+$bgc: #F5F5F5
+$pink: #cb76cb
+
+body
+    margin: 0
+    padding: 0
+    color: #000
+    font-family: 'Comfortaa', cursive
+    background-color: $bgc
+    overflow-x: hidden
+
+html, body
+    max-width: 100%
+    overflow-x: hidden
+
+*, *::before, *::after
+    box-sizing: border-box
+
+.container
+    width: 100%
+    max-width: 1200px
+    margin: 0 auto
+    padding: 0 15px
+
+h1, h2, h3, h4, h5, h6
+    margin: 0
+
+// Header 
+// ----------------
+
+.header_inner
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin: 10px 0
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4)
+
+.links a
+    text-decoration: none
+    color: #fff
+    margin-right: 65px
+    font-size: 18px
+    transition: .25s linear
+    &:last-child
+        margin-right: 0
+    &:hover
+        padding-bottom: 33px
+        border-bottom: 3px solid $pink
+        color: $pink
+        font-weight: 700
+    &:focus
+        outline: none
+
+// Intro 
+// ----------------
+.intro .container
+    height: 100%
+
+.intro_bg
+    // position: absolute
+    top: 0
+    left: 0
+    z-index: -5
+    width: 100%
+
+.intro_inner
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    height: 795px
+    color: #fff
+
+.intro_title
+    font-size: 48px
+    font-weight: bold
+    text-align: center
+    margin-bottom: 100px
+
+.intro_subtitle
+    font-size: 32px
+    font-weight: 500
+    text-align: center
+    margin-bottom: 100px
+
+.button
+    font-size: 24px
+    font-weight: bold
+    padding: 35px 100px
+    border: 3px solid #fff
+    border-radius: 6px
+    cursor: pointer
+    transition: all .3s linear
+    &:hover
+        background-color: #fff
+        color: $pink
+
+// About us
+
+.about
+    margin: 200px 0 100px 0
+    display: flex
+    flex-direction: column
+    text-align: center
+
+.about_title
+    margin-bottom: 60px
+    font-size: 32px
+    font-weight: 700
+
+.about_subtitle
+    margin-bottom: 80px
+    font-size: 22px
+    line-height: 150%
+.about_social_links
+    display: flex
+    flex-direction: row
+    justify-content: center
+
+.about_social_title
+    font-size: 26px
+    font-weight: 700
+    margin-bottom: 40px
+
+.about_social_link
+    border: 2px solid black
+    padding: 5px
+    border-radius: 50%
+    width: 60px
+    height: 60px
+    margin-right: 35px
+    cursor: pointer
+    display: flex
+    justify-content: center
+    align-items: center
+    transition: .1s linear
+    &:last-child
+        margin-right: 0
+    &:hover
+        border-color: $pink
+        .links_item
+            fill: $pink
+            border-color: $pink
+
+.links_item
+    width: 30px
+    height: 30px
+    transition: .15s linear
+
+// Artists
+
+.artists
+    background-color: #fff
+    padding: 100px 0
+
+.artists_title
+    font-size: 32px
+    font-weight: 700
+    margin-bottom: 50px
+
+.artists_inner
+    text-align: center
+
+.artists_slider
+    position: relative
+    margin: 0 -80px
+    & .slick-arrow
+        position: absolute
+        top: 40%
+        z-index: 10
+        width: 50px
+        height: 50px
+        font-size: 0
+        border: 0
+        border-radius: 50%
+        cursor: pointer
+        transition: .1s linear
+        &:hover
+            box-shadow: 4px 4px 8px 1px rgba(0, 0, 0, 0.25)
+        &:active
+            box-shadow: 0px 0px 0px 0px
+
+.slick-next
+    right: -30px
+    background: url('../Img/icons/ArrowNext.png') 0 0 no-repeat
+.slick-prev
+    left: -30px
+    background: url('../Img/icons/ArrowPrev.png') 0 0 no-repeat
+
+.slide
+    background-color: #EFEFEF
+    border-radius: 10px
+    padding: 40px
+    width: 350px
+    height: 650px
+    box-shadow: 8px 8px 20px 2px rgba(0, 0, 0, 0.25)
+    margin: 20px 80px 20px 80px
+    &:last-child
+        margin-right: 0
+    & .about_social_link
+        width: 45px
+        height: 45px
+        margin-right: 20px
+    & .links_item
+        width: 25px
+        height: 25px
+
+.slick-dots
+    display: flex
+    align-items: center
+    justify-content: center
+    & li
+        list-style: none
+        margin-right: 10px
+
+        &:last-child
+            margin-right: 0
+        &.slick-active button
+            background-color: #515151
+    & button
+        font-size: 0
+        width: 10px
+        height: 10px
+        border-radius: 50%
+        padding: 0
+        border: 0
+        background-color: #C4C4C4
+        transition: .2s linear
+        cursor: pointer
+
+.artist_photo img
+    width: 130px
+    height: 130px
+    border-radius: 50%
+    margin-bottom: 25px
+
+.artist_photo
+    display: flex
+    justify-content: center
+
+.artist_name
+    font-size: 20px
+    margin-bottom: 25px
+
+.artist_subtitle
+    font-size: 16px
+    margin-bottom: 25px
+    height: 150px
+    display: flex
+    align-items: center
+
+.artist_contacts
+    display: flex
+    flex-direction: row
+    justify-content: center
+
+// Works
+
+.masonry-layout
+    column-width: 370px
+    column-gap: 30px
+
+    &__panel
+        break-inside: avoid
+        // padding: 30px
+        margin-bottom: 30px
+
+    &__panel-content
+        // padding: 15px
+
+        filter: drop-shadow(7px 5px 8px rgba(0, 0, 0, 0.25))
+        position: relative
+        // overflow: hidden
+
+// Block Animation
+
+.animBlockLeft
+    transform: translate(-150%, 0)
+    opacity: 0
+    transition: all 0.6s ease-out
+.animBlockRight
+    transform: translate(150%, 0)
+    opacity: 0
+    transition: all 0.6s ease-out
+.animBlockOpacity
+    opacity: 0
+    transition: all 1.3s ease-out
+.animBlock_active
+    transform: translate(0, 0)
+    opacity: 1
+
+.works
+    margin-bottom: 100px
+
+.works_title
+    font-size: 32px
+    font-weight: 700
+    text-align: center
+    margin: 100px 0 50px 0
+
+.works_img
+    width: 370px
+    & img
+        width: 370px
+
+.img_title
+    display: flex
+    flex-direction: column
+    justify-content: center
+    text-align: center
+    width: 100%
+    height: 99%
+    background-color: rgba(203, 118, 203, 0.6)
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 2
+    opacity: 0
+    transition: opacity .2s linear
+    color: #fff
+    font-size: 18px
+
+.works_img:hover .img_title
+    opacity: 1
+
+// Contact Us
+
+.contacts
+    background-color: $pink
+
+.buttons
+    display: flex
+    justify-content: space-around
+    padding: 100px 0
+
+.contacts .button
+    padding: 0
+    width: 380px
+    height: 100px
+    background-color: transparent
+    color: #fff
+    &:hover
+        background-color: #fff
+        color: $pink
+
+.orderBar
+    display: flex
+    justify-content: space-between
+    padding: 15px
+    border-radius: 10px
+    width: 100%
+    margin-bottom: 30px
+
+.customerData
+    font-size: 20px
+    width: 50%
+    color: #fff
+    display: flex
+    align-items: center
+
+.orderInput
+    border-radius: 10px
+    width: 50%
+    height: 35px
+    outline: none
+    border: none
+    font-family: 'Comfortaa', cursive
+    font-size: 14px
+
+.inputs .button
+    width: 280px
+    height: 80px
+    margin: 40px 0 100px 0
+
+.active_button
+    background-color: #fff !important
+    color: $pink !important
+
+.inputs_not_active
+    opacity: 0
+    position: absolute
+    top: -1000px
+
+.cent
+    display: flex
+    justify-content: center
+
+// Footer
+
+.footer
+    background-color: #984498
+
+.footer_inner
+    display: flex
+    align-items: center
+    justify-content: space-between
+    align-content: center
+    padding: 30px 0
+    color: #fff
+
+.footer_contacts
+    text-align: center
+
+.footer_contacts_title
+    font-size: 18px
+    margin-bottom: 35px
+
+.mail
+    margin-bottom: 35px
+
+.copy
+    font-size: 18px
+
+// Fixed Header
+
+.header.fixed
+    position: fixed
+    z-index: 3
+    top: 0
+    left: 0
+    background-color: #984498
+    animation-name: showHeader
+    animation-duration: 1s
+    width: 100%
+    filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25))
+    & .logo img
+        width: 186px
+        height: 60px
+    & .header_inner
+        margin: 0
+        border-bottom: none
+    & .links a
+        &:hover
+            padding-bottom: 0
+            border-bottom: none
+
+@keyframes showHeader
+    0%
+        opacity: 0
+        top: -80px
+    100%
+        opacity: 1
+        top: 0
